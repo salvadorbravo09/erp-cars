@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -20,8 +21,8 @@ public class CarServiceImplementation implements CarService {
     }
 
     @Override
-    public Car getCarById(Long id) {
-        return carRepository.findById(id).orElseThrow();
+    public Optional<Car> getCarById(Long id) {
+        return carRepository.findById(id);
     }
 
     @Override
