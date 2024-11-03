@@ -3,16 +3,16 @@ package com.sbravoc.erp.cars.services.implementation;
 import com.sbravoc.erp.cars.entities.models.Car;
 import com.sbravoc.erp.cars.repositories.CarRepository;
 import com.sbravoc.erp.cars.services.CarService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class CarServiceImplementation implements CarService {
 
-    @Autowired
-    private CarRepository carRepository;
+    private final CarRepository carRepository;
 
     @Override
     public List<Car> getAllCars() {
