@@ -1,5 +1,6 @@
 package com.sbravoc.erp.cars.services.implementation;
 
+import com.sbravoc.erp.cars.entities.dtos.CarDTO;
 import com.sbravoc.erp.cars.entities.models.Car;
 import com.sbravoc.erp.cars.repositories.CarRepository;
 import com.sbravoc.erp.cars.services.CarService;
@@ -26,12 +27,21 @@ public class CarServiceImplementation implements CarService {
     }
 
     @Override
-    public void saveCar(Car car) {
-        carRepository.save(car);
+    public Car saveCar(CarDTO carDTO) {
+        return saveOrUpdateCar(new Car(), carDTO);
     }
 
     @Override
     public void deleteCar(Long id) {
         carRepository.deleteById(id);
+    }
+
+    private Car saveOrUpdateCar(Car car, CarDTO carDTO) {
+        car.setColor(carDTO.getColor());
+        car.setMake(carDTO.getMake());
+        car.setYear(carDTO.getYear());
+        car.setPatent(carDTO.getPatent());
+        car.setModel(carDTO.getModel());
+        return carRepository.save(car);
     }
 }

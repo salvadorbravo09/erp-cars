@@ -1,5 +1,6 @@
 package com.sbravoc.erp.cars.services;
 
+import com.sbravoc.erp.cars.entities.dtos.CarDTO;
 import com.sbravoc.erp.cars.entities.models.Car;
 
 import java.util.List;
@@ -11,7 +12,7 @@ public interface CarService {
 
     Optional<Car> getCarById(Long id);
 
-    void saveCar(Car car);
+    Car saveCar(CarDTO carDTO);
 
     void deleteCar(Long id);
 }
