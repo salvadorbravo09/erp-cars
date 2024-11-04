@@ -2,7 +2,6 @@ package com.sbravoc.erp.cars.controllers;
 
 import com.sbravoc.erp.cars.entities.dtos.CarDTO;
 import com.sbravoc.erp.cars.entities.models.Car;
-import com.sbravoc.erp.cars.repositories.CarRepository;
 import com.sbravoc.erp.cars.services.CarService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
